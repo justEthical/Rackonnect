@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test/Screens/CheckoutScreen/checkout_screen.dart';
 
 // ignore: must_be_immutable
 class Tournaments extends StatelessWidget {
@@ -234,21 +235,21 @@ class Tournaments extends StatelessWidget {
                         child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Card(
-                        color: Color(0xfff7e7da),
+                        color: const Color(0xfff7e7da),
                         child: Padding(
-                          padding: EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Column(children: [
-                            Text(
+                            const Text(
                               'Boys Singles U-11',
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   decoration: TextDecoration.underline),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   'Code: ',
@@ -290,12 +291,12 @@ class Tournaments extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Row(
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 Obx(() => isBoysSelected.value
                                     ? Row(
                                         children: [
@@ -307,19 +308,19 @@ class Tournaments extends StatelessWidget {
                                               width: 30,
                                               height: 30,
                                               color: Colors.blue,
-                                              child: Icon(
+                                              child: const Icon(
                                                 Icons.remove,
                                                 color: Colors.white,
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           Text(
                                             boys.value.toString(),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           InkWell(
@@ -330,7 +331,7 @@ class Tournaments extends StatelessWidget {
                                               width: 30,
                                               height: 30,
                                               color: Colors.blue,
-                                              child: Icon(
+                                              child: const Icon(
                                                 Icons.add,
                                                 color: Colors.white,
                                               ),
@@ -345,7 +346,7 @@ class Tournaments extends StatelessWidget {
                                         child: Container(
                                           width: 70,
                                           height: 30,
-                                          padding: EdgeInsets.all(6),
+                                          padding: const EdgeInsets.all(6),
                                           decoration: BoxDecoration(
                                               color: const Color(0xff1235B0),
                                               borderRadius:
@@ -373,21 +374,21 @@ class Tournaments extends StatelessWidget {
                         child: Container(
                       margin: const EdgeInsets.all(10),
                       child: Card(
-                        color: Color(0xfff7e7da),
+                        color: const Color(0xfff7e7da),
                         child: Padding(
-                          padding: EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Column(children: [
-                            Text(
+                            const Text(
                               'Girls Singles U-11',
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   decoration: TextDecoration.underline),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
-                            Row(
+                            const Row(
                               children: [
                                 Text(
                                   'Code: ',
@@ -429,12 +430,12 @@ class Tournaments extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Row(
                               children: [
-                                Spacer(),
+                                const Spacer(),
                                 Obx(() => isGirlsSelected.value
                                     ? Row(
                                         children: [
@@ -446,19 +447,19 @@ class Tournaments extends StatelessWidget {
                                               width: 30,
                                               height: 30,
                                               color: Colors.blue,
-                                              child: Icon(
+                                              child: const Icon(
                                                 Icons.remove,
                                                 color: Colors.white,
                                               ),
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           Text(
                                             girls.value.toString(),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 8,
                                           ),
                                           InkWell(
@@ -469,7 +470,7 @@ class Tournaments extends StatelessWidget {
                                               width: 30,
                                               height: 30,
                                               color: Colors.blue,
-                                              child: Icon(
+                                              child: const Icon(
                                                 Icons.add,
                                                 color: Colors.white,
                                               ),
@@ -484,7 +485,7 @@ class Tournaments extends StatelessWidget {
                                         child: Container(
                                           width: 70,
                                           height: 30,
-                                          padding: EdgeInsets.all(6),
+                                          padding: const EdgeInsets.all(6),
                                           decoration: BoxDecoration(
                                               color: const Color(0xff1235B0),
                                               borderRadius:
@@ -508,23 +509,29 @@ class Tournaments extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
-              onPressed: () {},
-              
+              onPressed: () {
+                Get.to(CheckoutScreen(boys: boys.value, girls: girls.value,));
+              },
               style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                fixedSize: Size(Get.width - 20, 60), backgroundColor: const Color(0xff1235B0)),
-              child: Text(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  fixedSize: Size(Get.width - 20, 60),
+                  backgroundColor: const Color(0xff1235B0)),
+              child: const Text(
                 'Checkout',
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: Colors.white),
               ),
+            ),
+            const SizedBox(
+              height: 20,
             )
-            ,
-            SizedBox(height: 20,)
           ],
         ),
       ),
