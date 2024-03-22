@@ -18,7 +18,7 @@ class PlayersScreen extends StatelessWidget {
                   BorderRadius.only(bottomRight: Radius.circular(50))),
           child: SafeArea(
               child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Row(
               children: [
                 IconButton(
@@ -30,7 +30,7 @@ class PlayersScreen extends StatelessWidget {
                       color: Colors.white,
                     )),
                 const Text(
-                  'Rackonnect',
+                  'Players',
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
@@ -85,7 +85,7 @@ class PlayerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -94,21 +94,21 @@ class PlayerCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 70,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     'Aadi $index', // Placeholder for player name
-                    style: TextStyle(fontSize: 16.0),
+                    style: const TextStyle(fontSize: 16.0),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     width: 70,
                     height: 30,
-                    padding: EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
-                        color: Color(0xff1235B0),
+                        color: const Color(0xff1235B0),
                         borderRadius: BorderRadius.circular(10)),
                     child: const Center(
                         child: Text(
@@ -137,7 +137,7 @@ class PlayerCard extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: Get.width - 170,
-                        child: Row(
+                        child: const Row(
                           children: [
                             Icon(
                               Icons.account_circle,
@@ -162,7 +162,7 @@ class PlayerCard extends StatelessWidget {
 
                       SizedBox(
                         width: Get.width - 170,
-                        child: Row(
+                        child: const Row(
                           children: [
                             Icon(
                               Icons.show_chart,
@@ -187,7 +187,7 @@ class PlayerCard extends StatelessWidget {
 
                       SizedBox(
                         width: Get.width - 170,
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Icon(
